@@ -1,1 +1,1 @@
-this is readme file.
+A web-based Parking Management System primarily developed using PHP, with HTML, CSS, and a little JavaScript. This admin-focused system allows for efficient vehicle entry tracking, parking slot management, and basic reporting. Best suited for academic use or small parking facilities.
