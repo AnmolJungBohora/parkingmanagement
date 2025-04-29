@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --main-color: #22BAA0;
+    --color-dark: #34425A;
+    --text-grey: #B0B0B0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Merriweather', sans-serif;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 165px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--color-dark);
+    transition: left 300ms;
+}
+
+
+
+.side-content {
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
+
+/* width */
+.side-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.side-content::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.side-content::-webkit-scrollbar-thumb {
+  background: #b0b0b0; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.side-content::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+.profile {
+    text-align: center;
+    padding: 2rem 0rem;
+}
+
+.bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.profile-img {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    margin: 0 auto .5rem auto;
+    border: 3px solid #899DC1;
+}
+
+.profile h4 {
+    color: #fff;
+    font-weight: 500;
+}
+
+.profile small {
+    color: #899DC1;
+    font-weight: 600;
+}
+
+.sidebar {
+    /*overflow-y: auto;*/
+}
+
+.side-menu ul {
+    text-align: center;
+}
+
+.side-menu a {
+    display: block;
+    padding: 1.2rem 0rem;
+}
+
+.side-menu a.active {
+    background: #2B384E;
+}
+
+.side-menu a.active span, .side-menu a.active small {
+    color: #fff;
+}
+
+.side-menu a span {
+    display: block;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.side-menu a span, .side-menu a small {
+    color: #899DC1;
+}
+
+#menu-toggle:checked ~ .sidebar {
+    width: 60px;
+}
+
+#menu-toggle:checked ~ .sidebar .side-header span {
+    display: none;
+}
+
+#menu-toggle:checked ~ .main-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+#menu-toggle:checked ~ .main-content header {
+    left: 60px;
+}
+
+#menu-toggle:checked ~ .sidebar .profile,
+#menu-toggle:checked ~ .sidebar .side-menu a small {
+    display: none;
+}
+
+#menu-toggle:checked ~ .sidebar .side-menu a span {
+    font-size: 1.3rem;
+}
+
+
+.main-content {
+    margin-left: 165px;
+    width: calc(100% - 165px);
+    transition: margin-left 300ms;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 165px;
+    z-index: 100;
+    height: 60px;
+    box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+    background: #E9edf2;
+    transition: left 300ms;
+}
+
+.header-content, .header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    justify-content: space-between;
+    padding: 0rem 1rem;
+}
+
+.header-content label:first-child span {
+    font-size: 1.3rem;
+}
+
+.header-content label {
+    cursor: pointer;
+}
+
+.header-menu {
+    justify-content: flex-end;
+    padding-top: .5rem;
+}
+
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user div, .client-img {
+    height: 40px;
+    width: 40px;
+    margin-right: 1rem;
+}
+
+.user span:last-child {
+    display: inline-block;
+    margin-left: .3rem;
+    font-size: .8rem;
+}
+
+main {
+    margin-top: 60px;
+}
+
+.page-header {
+    padding: 1.3rem 1rem;
+    background: white;
+    /* border-bottom: 1px solid #dee2e8; */
+}
+
+.page-header h1, .page-header small {
+    color: #74767d;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    
+    .sidebar {
+        left: -165px;
+        z-index: 90;
+    }
+    
+    header {
+        left: 0;
+        width: 100%;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    #menu-toggle:checked ~ .sidebar {
+        left: 0;
+    }
+    
+    #menu-toggle:checked ~ .sidebar {
+        width: 165px;
+    }
+
+    #menu-toggle:checked ~ .sidebar .side-header span {
+        display: inline-block;
+    }
+
+    #menu-toggle:checked ~ .sidebar .profile,
+    #menu-toggle:checked ~ .sidebar .side-menu a small {
+        display: block;
+    }
+
+    #menu-toggle:checked ~ .sidebar .side-menu a span {
+        font-size: 1.7rem;
+    }
+    
+    #menu-toggle:checked ~ .main-content header {
+        left: 0px;
+    }
+    
+ 
+}
+
+
+
+
+
+
+
+.MainCard {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+  .MainCard .Card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+    transition: 0.2s;
+  }
+  .Card:hover {
+    background: #9d9d9d;
+    color: #fff;
+    cursor: pointer;
+  }
+  .Card .num {
+    color: #2c2c56;
+    font-size: 35px;
+    font-weight: 500;
+  }
+  .Card .name {
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+  }
+  .Card:hover .name {
+    color: #fff;
+  }
+  .Card .icon  {
+    color:#2c2c56;
+    font-size: 45px;
+  }
+ .content-main{
+    padding: 20px;
+    padding-top: 0;
+ }
+  .MainChart {
+    display: grid;
+    grid-template-columns:  2fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+  }
+  .MainChart .Chart {
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .MainChart .Chart h1 {
+    text-align: center;
+    font-weight:bold;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+ 
+
+  .card-header-ne {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+  }
+
+  .card-header-ne .title {
+      vertical-align: middle;
+  }
+   
+  .date-wrapper {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      font-size: 12px;
+      color: #6c757d;
+      background:#efeff5;
+      }
+      
+      .date-wrapper ion-icon {
+      margin-right: 8px;
+      }
+    .bg-white {
+    background-color: white;
+    }
+
+    .border {
+    border: 1px solid #ccc;
+    }
+
+
+
+
+
+
+/* Style for panel heading */
+.panel-heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style for Add New Vehicle Category button */
+.panel-heading .btn-primary {
+    float: right;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    
+}
+
+
+thead th {
+    background-color: #fff;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Style for table rows */
+tbody tr:nth-child(odd) {
+    background-color: #dbd9d9;
+}
+tbody tr:nth-child(even) {
+    background-color: #f1dfdf;
+}
+
+/* Style for table cells */
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Style for edit and delete buttons */
+.btn-success, .btn-danger {
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+
+
+/* Style for search input and length selection */
+.dataTables_filter, .dataTables_length {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.dataTables_filter {
+    float: right;
+    text-align: right;
+}
+
+.dataTables_length {
+    float: left;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.dataTables_filter label {
+    margin-right:20px;
+}
+
+/* Adjust the width of search input */
+.dataTables_filter input {
+    width: auto;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left:20px;
+}
+
+/* Adjust the appearance of length select */
+.dataTables_length select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    
+}
+
+/* Customize the appearance of dropdown options */
+.dataTables_length select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Customize the appearance of the selected option */
+.dataTables_length select option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dataTables_length label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.dataTables_info {
+    margin-top: 20px; 
+    font-size: 14px; 
+    color: #333;
+    margin-left:10px;
+}
+
+.panel {
+    border: 1px solid #eae5e5;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+/* Style for pagination container */
+.dataTables_paginate {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style for pagination buttons */
+.pagination > li {
+    display: inline;
+    margin: 0 5px;
+}
+
+/* Style for active pagination button */
+.pagination > li.active > a,
+.pagination > li.active > span {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+    cursor: default;
+}
+
+/* Style for pagination links */
+.pagination > li > a,
+.pagination > li > span {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #337ab7;
+}
+
+/* Style for disabled pagination links */
+.pagination > li.disabled > a,
+.pagination > li.disabled > span {
+    color: #777;
+    cursor: not-allowed;
+}
+
+
+.panel-heading a.btn {
+    margin-top: -5px;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+
